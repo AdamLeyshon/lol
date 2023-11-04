@@ -2,7 +2,8 @@
 name = "lol-admin"
 version = "0.9.5"
 authors = ["Akira Hayakawa <ruby.wktk@gmail.com>"]
-edition = "2018"
+edition = "2021"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

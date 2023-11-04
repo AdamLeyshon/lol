@@ -1,3 +1,4 @@
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApplyReq {
     #[prost(bytes = "vec", tag = "1")]
@@ -5,11 +6,13 @@ pub struct ApplyReq {
     #[prost(bool, tag = "2")]
     pub mutation: bool,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CommitReq {
     #[prost(bytes = "vec", tag = "1")]
     pub message: ::prost::alloc::vec::Vec<u8>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LowLevelApplyReq {
     #[prost(bool, tag = "1")]
@@ -19,6 +22,7 @@ pub struct LowLevelApplyReq {
     #[prost(bool, tag = "3")]
     pub mutation: bool,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LowLevelCommitReq {
     #[prost(bool, tag = "1")]
@@ -26,13 +30,16 @@ pub struct LowLevelCommitReq {
     #[prost(bytes = "vec", tag = "2")]
     pub message: ::prost::alloc::vec::Vec<u8>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApplyRep {
     #[prost(bytes = "vec", tag = "1")]
     pub message: ::prost::alloc::vec::Vec<u8>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CommitRep {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AppendStreamHeader {
     #[prost(string, tag = "1")]
@@ -42,6 +49,7 @@ pub struct AppendStreamHeader {
     #[prost(uint64, tag = "3")]
     pub prev_log_index: u64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AppendStreamEntry {
     #[prost(uint64, tag = "1")]
@@ -51,6 +59,7 @@ pub struct AppendStreamEntry {
     #[prost(bytes = "bytes", tag = "3")]
     pub command: ::prost::bytes::Bytes,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AppendEntryReq {
     #[prost(oneof = "append_entry_req::Elem", tags = "1, 2")]
@@ -58,6 +67,7 @@ pub struct AppendEntryReq {
 }
 /// Nested message and enum types in `AppendEntryReq`.
 pub mod append_entry_req {
+    #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Elem {
         #[prost(message, tag = "1")]
@@ -66,6 +76,7 @@ pub mod append_entry_req {
         Entry(super::AppendStreamEntry),
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AppendEntryRep {
     #[prost(bool, tag = "1")]
@@ -73,16 +84,19 @@ pub struct AppendEntryRep {
     #[prost(uint64, tag = "2")]
     pub last_log_index: u64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetSnapshotReq {
     #[prost(uint64, tag = "1")]
     pub index: u64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetSnapshotRep {
     #[prost(bytes = "bytes", tag = "1")]
     pub chunk: ::prost::bytes::Bytes,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RequestVoteReq {
     #[prost(uint64, tag = "1")]
@@ -98,11 +112,13 @@ pub struct RequestVoteReq {
     #[prost(bool, tag = "6")]
     pub pre_vote: bool,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RequestVoteRep {
     #[prost(bool, tag = "1")]
     pub vote_granted: bool,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct HeartbeatReq {
     #[prost(uint64, tag = "1")]
@@ -112,42 +128,55 @@ pub struct HeartbeatReq {
     #[prost(uint64, tag = "3")]
     pub leader_commit: u64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct HeartbeatRep {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TimeoutNowReq {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TimeoutNowRep {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AddServerReq {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AddServerRep {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RemoveServerReq {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RemoveServerRep {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TuneConfigReq {
     #[prost(uint64, optional, tag = "1")]
     pub compaction_interval_sec: ::core::option::Option<u64>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TuneConfigRep {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetConfigReq {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetConfigRep {
     #[prost(uint64, tag = "1")]
     pub compaction_interval_sec: u64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ClusterInfoReq {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ClusterInfoRep {
     #[prost(string, optional, tag = "1")]
@@ -155,8 +184,10 @@ pub struct ClusterInfoRep {
     #[prost(string, repeated, tag = "2")]
     pub membership: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StatusReq {}
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StatusRep {
     #[prost(uint64, tag = "1")]
@@ -181,7 +212,7 @@ pub mod raft_client {
         /// Attempt to create a new client by connecting to a given endpoint.
         pub async fn connect<D>(dst: D) -> Result<Self, tonic::transport::Error>
         where
-            D: std::convert::TryInto<tonic::transport::Endpoint>,
+            D: TryInto<tonic::transport::Endpoint>,
             D::Error: Into<StdError>,
         {
             let conn = tonic::transport::Endpoint::new(dst)?.connect().await?;
@@ -237,10 +268,26 @@ pub mod raft_client {
             self.inner = self.inner.accept_compressed(encoding);
             self
         }
+        /// Limits the maximum size of a decoded message.
+        ///
+        /// Default: `4MB`
+        #[must_use]
+        pub fn max_decoding_message_size(mut self, limit: usize) -> Self {
+            self.inner = self.inner.max_decoding_message_size(limit);
+            self
+        }
+        /// Limits the maximum size of an encoded message.
+        ///
+        /// Default: `usize::MAX`
+        #[must_use]
+        pub fn max_encoding_message_size(mut self, limit: usize) -> Self {
+            self.inner = self.inner.max_encoding_message_size(limit);
+            self
+        }
         pub async fn request_vote(
             &mut self,
             request: impl tonic::IntoRequest<super::RequestVoteReq>,
-        ) -> Result<tonic::Response<super::RequestVoteRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::RequestVoteRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -254,12 +301,14 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/RequestVote",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "RequestVote"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn send_append_entry(
             &mut self,
             request: impl tonic::IntoStreamingRequest<Message = super::AppendEntryReq>,
-        ) -> Result<tonic::Response<super::AppendEntryRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::AppendEntryRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -273,14 +322,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/SendAppendEntry",
             );
-            self.inner
-                .client_streaming(request.into_streaming_request(), path, codec)
-                .await
+            let mut req = request.into_streaming_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "SendAppendEntry"));
+            self.inner.client_streaming(req, path, codec).await
         }
         pub async fn get_snapshot(
             &mut self,
             request: impl tonic::IntoRequest<super::GetSnapshotReq>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<tonic::codec::Streaming<super::GetSnapshotRep>>,
             tonic::Status,
         > {
@@ -297,12 +347,14 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/GetSnapshot",
             );
-            self.inner.server_streaming(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "GetSnapshot"));
+            self.inner.server_streaming(req, path, codec).await
         }
         pub async fn request_apply(
             &mut self,
             request: impl tonic::IntoRequest<super::ApplyReq>,
-        ) -> Result<tonic::Response<super::ApplyRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::ApplyRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -316,12 +368,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/RequestApply",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "RequestApply"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn request_commit(
             &mut self,
             request: impl tonic::IntoRequest<super::CommitReq>,
-        ) -> Result<tonic::Response<super::CommitRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::CommitRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -335,12 +390,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/RequestCommit",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "RequestCommit"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn low_level_request_apply(
             &mut self,
             request: impl tonic::IntoRequest<super::LowLevelApplyReq>,
-        ) -> Result<tonic::Response<super::ApplyRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::ApplyRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -354,12 +412,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/LowLevelRequestApply",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "LowLevelRequestApply"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn low_level_request_commit(
             &mut self,
             request: impl tonic::IntoRequest<super::LowLevelCommitReq>,
-        ) -> Result<tonic::Response<super::CommitRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::CommitRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -373,12 +434,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/LowLevelRequestCommit",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "LowLevelRequestCommit"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn send_heartbeat(
             &mut self,
             request: impl tonic::IntoRequest<super::HeartbeatReq>,
-        ) -> Result<tonic::Response<super::HeartbeatRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::HeartbeatRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -392,12 +456,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/SendHeartbeat",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "SendHeartbeat"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn timeout_now(
             &mut self,
             request: impl tonic::IntoRequest<super::TimeoutNowReq>,
-        ) -> Result<tonic::Response<super::TimeoutNowRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::TimeoutNowRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -409,12 +476,14 @@ pub mod raft_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/lol_core.Raft/TimeoutNow");
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "TimeoutNow"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn add_server(
             &mut self,
             request: impl tonic::IntoRequest<super::AddServerReq>,
-        ) -> Result<tonic::Response<super::AddServerRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::AddServerRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -426,12 +495,17 @@ pub mod raft_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/lol_core.Raft/AddServer");
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "AddServer"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn remove_server(
             &mut self,
             request: impl tonic::IntoRequest<super::RemoveServerReq>,
-        ) -> Result<tonic::Response<super::RemoveServerRep>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveServerRep>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -445,12 +519,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/RemoveServer",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "RemoveServer"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn tune_config(
             &mut self,
             request: impl tonic::IntoRequest<super::TuneConfigReq>,
-        ) -> Result<tonic::Response<super::TuneConfigRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::TuneConfigRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -462,12 +539,14 @@ pub mod raft_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/lol_core.Raft/TuneConfig");
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "TuneConfig"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn get_config(
             &mut self,
             request: impl tonic::IntoRequest<super::GetConfigReq>,
-        ) -> Result<tonic::Response<super::GetConfigRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::GetConfigRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -479,12 +558,14 @@ pub mod raft_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/lol_core.Raft/GetConfig");
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "GetConfig"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn request_cluster_info(
             &mut self,
             request: impl tonic::IntoRequest<super::ClusterInfoReq>,
-        ) -> Result<tonic::Response<super::ClusterInfoRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::ClusterInfoRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -498,12 +579,15 @@ pub mod raft_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/lol_core.Raft/RequestClusterInfo",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("lol_core.Raft", "RequestClusterInfo"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn status(
             &mut self,
             request: impl tonic::IntoRequest<super::StatusReq>,
-        ) -> Result<tonic::Response<super::StatusRep>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::StatusRep>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -515,7 +599,9 @@ pub mod raft_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/lol_core.Raft/Status");
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("lol_core.Raft", "Status"));
+            self.inner.unary(req, path, codec).await
         }
     }
 }
@@ -529,75 +615,80 @@ pub mod raft_server {
         async fn request_vote(
             &self,
             request: tonic::Request<super::RequestVoteReq>,
-        ) -> Result<tonic::Response<super::RequestVoteRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::RequestVoteRep>, tonic::Status>;
         async fn send_append_entry(
             &self,
             request: tonic::Request<tonic::Streaming<super::AppendEntryReq>>,
-        ) -> Result<tonic::Response<super::AppendEntryRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::AppendEntryRep>, tonic::Status>;
         /// Server streaming response type for the GetSnapshot method.
-        type GetSnapshotStream: futures_core::Stream<
-                Item = Result<super::GetSnapshotRep, tonic::Status>,
+        type GetSnapshotStream: tonic::codegen::tokio_stream::Stream<
+                Item = std::result::Result<super::GetSnapshotRep, tonic::Status>,
             >
             + Send
             + 'static;
         async fn get_snapshot(
             &self,
             request: tonic::Request<super::GetSnapshotReq>,
-        ) -> Result<tonic::Response<Self::GetSnapshotStream>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<Self::GetSnapshotStream>,
+            tonic::Status,
+        >;
         async fn request_apply(
             &self,
             request: tonic::Request<super::ApplyReq>,
-        ) -> Result<tonic::Response<super::ApplyRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::ApplyRep>, tonic::Status>;
         async fn request_commit(
             &self,
             request: tonic::Request<super::CommitReq>,
-        ) -> Result<tonic::Response<super::CommitRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::CommitRep>, tonic::Status>;
         async fn low_level_request_apply(
             &self,
             request: tonic::Request<super::LowLevelApplyReq>,
-        ) -> Result<tonic::Response<super::ApplyRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::ApplyRep>, tonic::Status>;
         async fn low_level_request_commit(
             &self,
             request: tonic::Request<super::LowLevelCommitReq>,
-        ) -> Result<tonic::Response<super::CommitRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::CommitRep>, tonic::Status>;
         async fn send_heartbeat(
             &self,
             request: tonic::Request<super::HeartbeatReq>,
-        ) -> Result<tonic::Response<super::HeartbeatRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::HeartbeatRep>, tonic::Status>;
         async fn timeout_now(
             &self,
             request: tonic::Request<super::TimeoutNowReq>,
-        ) -> Result<tonic::Response<super::TimeoutNowRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::TimeoutNowRep>, tonic::Status>;
         async fn add_server(
             &self,
             request: tonic::Request<super::AddServerReq>,
-        ) -> Result<tonic::Response<super::AddServerRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::AddServerRep>, tonic::Status>;
         async fn remove_server(
             &self,
             request: tonic::Request<super::RemoveServerReq>,
-        ) -> Result<tonic::Response<super::RemoveServerRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::RemoveServerRep>, tonic::Status>;
         async fn tune_config(
             &self,
             request: tonic::Request<super::TuneConfigReq>,
-        ) -> Result<tonic::Response<super::TuneConfigRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::TuneConfigRep>, tonic::Status>;
         async fn get_config(
             &self,
             request: tonic::Request<super::GetConfigReq>,
-        ) -> Result<tonic::Response<super::GetConfigRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::GetConfigRep>, tonic::Status>;
         async fn request_cluster_info(
             &self,
             request: tonic::Request<super::ClusterInfoReq>,
-        ) -> Result<tonic::Response<super::ClusterInfoRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::ClusterInfoRep>, tonic::Status>;
         async fn status(
             &self,
             request: tonic::Request<super::StatusReq>,
-        ) -> Result<tonic::Response<super::StatusRep>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::StatusRep>, tonic::Status>;
     }
     #[derive(Debug)]
     pub struct RaftServer<T: Raft> {
         inner: _Inner<T>,
         accept_compression_encodings: EnabledCompressionEncodings,
         send_compression_encodings: EnabledCompressionEncodings,
+        max_decoding_message_size: Option<usize>,
+        max_encoding_message_size: Option<usize>,
     }
     struct _Inner<T>(Arc<T>);
     impl<T: Raft> RaftServer<T> {
@@ -610,6 +701,8 @@ pub mod raft_server {
                 inner,
                 accept_compression_encodings: Default::default(),
                 send_compression_encodings: Default::default(),
+                max_decoding_message_size: None,
+                max_encoding_message_size: None,
             }
         }
         pub fn with_interceptor<F>(
@@ -633,6 +726,22 @@ pub mod raft_server {
             self.send_compression_encodings.enable(encoding);
             self
         }
+        /// Limits the maximum size of a decoded message.
+        ///
+        /// Default: `4MB`
+        #[must_use]
+        pub fn max_decoding_message_size(mut self, limit: usize) -> Self {
+            self.max_decoding_message_size = Some(limit);
+            self
+        }
+        /// Limits the maximum size of an encoded message.
+        ///
+        /// Default: `usize::MAX`
+        #[must_use]
+        pub fn max_encoding_message_size(mut self, limit: usize) -> Self {
+            self.max_encoding_message_size = Some(limit);
+            self
+        }
     }
     impl<T, B> tonic::codegen::Service<http::Request<B>> for RaftServer<T>
     where
@@ -646,7 +755,7 @@ pub mod raft_server {
         fn poll_ready(
             &mut self,
             _cx: &mut Context<'_>,
-        ) -> Poll<Result<(), Self::Error>> {
+        ) -> Poll<std::result::Result<(), Self::Error>> {
             Poll::Ready(Ok(()))
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
@@ -666,15 +775,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::RequestVoteReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).request_vote(request).await
+                                <T as Raft>::request_vote(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -684,6 +795,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -708,15 +823,17 @@ pub mod raft_server {
                                 tonic::Streaming<super::AppendEntryReq>,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).send_append_entry(request).await
+                                <T as Raft>::send_append_entry(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -726,6 +843,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.client_streaming(method, req).await;
                         Ok(res)
@@ -749,15 +870,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::GetSnapshotReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_snapshot(request).await
+                                <T as Raft>::get_snapshot(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -767,6 +890,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.server_streaming(method, req).await;
                         Ok(res)
@@ -787,15 +914,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::ApplyReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).request_apply(request).await
+                                <T as Raft>::request_apply(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -805,6 +934,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -825,15 +958,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::CommitReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).request_commit(request).await
+                                <T as Raft>::request_commit(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -843,6 +978,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -863,15 +1002,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::LowLevelApplyReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).low_level_request_apply(request).await
+                                <T as Raft>::low_level_request_apply(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -881,6 +1022,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -901,15 +1046,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::LowLevelCommitReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).low_level_request_commit(request).await
+                                <T as Raft>::low_level_request_commit(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -919,6 +1066,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -939,15 +1090,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::HeartbeatReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).send_heartbeat(request).await
+                                <T as Raft>::send_heartbeat(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -957,6 +1110,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -977,13 +1134,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::TimeoutNowReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move { (*inner).timeout_now(request).await };
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Raft>::timeout_now(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -993,6 +1154,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1013,13 +1178,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::AddServerReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move { (*inner).add_server(request).await };
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Raft>::add_server(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -1029,6 +1198,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1049,15 +1222,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::RemoveServerReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).remove_server(request).await
+                                <T as Raft>::remove_server(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -1067,6 +1242,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1087,13 +1266,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::TuneConfigReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move { (*inner).tune_config(request).await };
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Raft>::tune_config(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -1103,6 +1286,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1123,13 +1310,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::GetConfigReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move { (*inner).get_config(request).await };
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Raft>::get_config(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -1139,6 +1330,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1159,15 +1354,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::ClusterInfoReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).request_cluster_info(request).await
+                                <T as Raft>::request_cluster_info(&inner, request).await
                             };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -1177,6 +1374,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1197,13 +1398,17 @@ pub mod raft_server {
                             &mut self,
                             request: tonic::Request<super::StatusReq>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move { (*inner).status(request).await };
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Raft>::status(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -1213,6 +1418,10 @@ pub mod raft_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -1241,12 +1450,14 @@ pub mod raft_server {
                 inner,
                 accept_compression_encodings: self.accept_compression_encodings,
                 send_compression_encodings: self.send_compression_encodings,
+                max_decoding_message_size: self.max_decoding_message_size,
+                max_encoding_message_size: self.max_encoding_message_size,
             }
         }
     }
     impl<T: Raft> Clone for _Inner<T> {
         fn clone(&self) -> Self {
-            Self(self.0.clone())
+            Self(Arc::clone(&self.0))
         }
     }
     impl<T: std::fmt::Debug> std::fmt::Debug for _Inner<T> {

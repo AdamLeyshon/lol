@@ -1,13 +1,6 @@
 [workspace]
+resolver = "2"
 members = [
     "lol-core",
     "lol-admin",
-
-    # internal
-    "integration-tests",
-
-    # examples
-    "examples/kvs",
-    "examples/multi-services",
-    "examples/atomic-counter",
 ]
