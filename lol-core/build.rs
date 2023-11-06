@@ -11,6 +11,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Output the generated rs files to `src/proto/`
     tonic_build::configure()
         .out_dir("src/proto/")
+        .protoc_arg("--experimental_allow_proto3_optional")
         .compile_with_config(config, &["lol_core.proto"], &["proto"])?;
 
     Ok(())
